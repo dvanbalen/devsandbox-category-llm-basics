@@ -64,7 +64,7 @@ public class bindings extends RouteBuilder {
                 String payload = exchange.getMessage().getBody(String.class);
                 List<ChatMessage> messages = new ArrayList<>();
 
-                String systemMessage = """
+                /*String systemMessage = """
                     Introduce yourself as a helpful travel assistant.
 
                     %s
@@ -82,7 +82,7 @@ public class bindings extends RouteBuilder {
                     Use short answers.
                     """;
 
-                messages.add(new SystemMessage(systemMessage.formatted(tools)));
+                messages.add(new SystemMessage(systemMessage.formatted(tools)));*/
                 messages.add(new UserMessage(payload));
 
                 exchange.getIn().setBody(messages);
